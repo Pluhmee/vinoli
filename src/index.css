@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Official Vinoli Brand Palette (derived directly from brand identity mark)
+ * -------------------------------------------------------------------------
+ * Light Mode: Warm Cream (#FDF9ED) canvas + Crisp White (#FFFFFF) floating pills + Royal Plum (#2A054D) + Tangerine (#FC7B0F)
+ * Dark Mode:  Midnight Plum (#130224) canvas + Elevated Plum (#22073D) floating pills + Warm Cream (#FDF9ED) + Tangerine (#FC7B0F)
+ */
+@layer base {
+  :root {
+    /* Surfaces */
+    --color-surface: 253 249 237;          /* #FDF9ED signature warm ivory cream */
+    --color-surface-muted: 244 237 220;    /* #F4EDDC warm oat / sand fill */
+    --color-surface-elevated: 255 255 255; /* #FFFFFF crisp floating pill & card surface */
+    --color-surface-inverse: 31 3 58;      /* #1F033A deep midnight plum */
+
+    /* Typography & Plum Brand Ink */
+    --color-ink: 42 5 77;                  /* #2A054D Vinoli royal plum */
+    --color-ink-muted: 96 71 120;          /* #604778 muted plum-slate */
+    --color-ink-subtle: 138 117 158;       /* #8A759E captions & secondary meta */
+    --color-ink-inverse: 253 249 237;      /* #FDF9ED warm cream on dark plum */
+
+    /* Primary Action — Vinoli Road Tangerine */
+    --color-brand: 252 123 15;             /* #FC7B0F vibrant orange */
+    --color-brand-hover: 227 102 2;        /* #E36602 pressed tangerine */
+    --color-brand-soft: 255 238 220;       /* #FFEEDC soft peach wash */
+    --color-brand-foreground: 255 255 255; /* #FFFFFF */
+
+    /* Secondary Brand — Plum & Motion Lavender */
+    --color-plum: 42 5 77;                 /* #2A054D */
+    --color-plum-soft: 241 233 249;        /* #F1E9F9 soft orchid wash */
+    --color-violet: 142 105 164;           /* #8E69A4 speed-streak lavender */
+
+    /* Semantic Status */
+    --color-success: 21 128 61;            /* #15803D */
+    --color-alert: 239 68 68;              /* #EF4444 */
+
+    /* Borders & Dividers */
+    --color-line: 235 226 206;             /* #EBE2CE warm sand border */
+    --color-line-strong: 216 203 178;      /* #D8CBB2 stronger control border */
+
+    /* Typography & Geometry */
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --radius-card: 1.125rem;
+    --radius-control: 0.75rem;
+  }
+
+  :root.dark {
+    --color-surface: 19 2 36;              /* #130224 deep midnight Vinoli plum */
+    --color-surface-muted: 30 6 54;        /* #1E0636 muted dark plum */
+    --color-surface-elevated: 38 9 68;     /* #260944 floating dark plum pills & cards */
+    --color-surface-inverse: 12 1 24;      /* #0C0118 ultra-deep footer surface */
+
+    --color-ink: 253 249 237;              /* #FDF9ED warm cream primary text */
+    --color-ink-muted: 206 191 222;        /* #CEBFDE soft lavender-cream copy */
+    --color-ink-subtle: 158 136 182;       /* #9E88B6 subtle metadata */
+    --color-ink-inverse: 253 249 237;      /* #FDF9ED */
+
+    --color-brand: 252 123 15;             /* #FC7B0F vibrant Vinoli orange */
+    --color-brand-hover: 255 142 43;       /* #FF8E2B luminous hover */
+    --color-brand-soft: 68 28 18;          /* warm dark amber wash */
+    --color-brand-foreground: 255 255 255;
+
+    --color-plum: 58 14 104;               /* #3A0E68 distinct royal plum capsule in dark mode */
+    --color-plum-soft: 49 14 86;           /* #310E56 */
+    --color-violet: 174 139 199;
+
+    --color-line: 64 25 102;               /* #401966 subtle plum border */
+    --color-line-strong: 88 40 135;        /* #582887 */
+  }
+
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: rgb(var(--color-surface));
+    color: rgb(var(--color-ink));
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
